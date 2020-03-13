@@ -1,32 +1,27 @@
-#include <typeinfo>
+#pragma once
 #include <string>
 
 using namespace std;
 
-#ifndef COMPLEJO_H
-#define COMPLEJO_H
-
 class Complejo{
-	
-	private: 
+    int real;
+    int imaginario;
+    public:
+        Complejo();
+        Complejo( int real, int imaginario );
 
-		int a;
-		int b;
+        int getReal(){ 
+        	return real; 
+        }
 
-	public: 
-
-		Complejo();
-		Complejo(int, int );
-
-		int getA();
-		void setA(int);
-
-		int getB();
-		void setB(int);
-		
-		string to_string();
-		
-		~Complejo();
+        int getImaginario(){ 
+        	return imaginario; 
+        }
+        
+        Complejo operator+( Complejo );
+        Complejo operator*( Complejo );
+        
+        string To_string(){ 
+        	return to_string(real) + "+" + to_string(imaginario) + 'i'; 
+        }
 };
-
-#endif

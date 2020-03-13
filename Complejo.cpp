@@ -1,44 +1,22 @@
 #include "Complejo.h"
-#include <iostream>
-#include <typeinfo>
-
-using namespace std;
 
 Complejo::Complejo(){
-	a=0;
-	b=0;
+
 }
 
-Complejo::Complejo(int p_a, int p_b){
-	a=p_a;
-	b=p_b;
+Complejo::Complejo( int real, int imaginario ){
+    this->real = real;
+    this->imaginario = imaginario;
 }
 
-int Complejo::getA(){
-	return a;
+Complejo Complejo::operator+( Complejo r2 ){
+    int parte_real = (*this).getReal() + r2.getReal();
+    int parte_imaginaria = (*this).getImaginario() + r2.getImaginario();
+    return Complejo( parte_real, parte_imaginaria );
 }
 
-void Complejo::setA(int p_a){
-	a=p_a;
-}
-
-int Complejo::getB(){
-	return b;
-}
-
-void Complejo::setB(int p_b){
-	b=p_b;
-}
-
-string Complejo::to_string(){
-	if(b<0){
-		cout<<""<<a<<""<<b<<"i";
-		return " ";
-	}else{
-		cout<<""<<a<<"+"<<b<<"i";
-		return " ";
-	}
-}
-Complejo::~Complejo(){
-	
+Complejo Complejo::operator*( Complejo r2 ){
+    int parte_real = (*this).getReal() * r2.getReal() - (*this).getImaginario() * r2.getImaginario();
+    int parte_imaginaria = (*this).getReal() * r2.getImaginario() + (*this).getImaginario() * r2.getReal();
+    return Complejo( parte_real, parte_imaginaria );
 }

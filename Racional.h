@@ -24,7 +24,8 @@ class Racional{
         Racional operator+( Racional r2 );
         Racional operator*( Racional r2 );
         
-        string toString(){ 
+        string To_string(){ 
+
         	return to_string(numerador) + "/" + to_string(denominador); 
         }
 };

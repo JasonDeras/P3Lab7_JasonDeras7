@@ -60,21 +60,27 @@ int  denominador(int deno){
 
 void listar_Racional(){
 
-	cout<<"Lista de Racionales"<<endl;
-	for (int i = 0; i < lista_Racional.size(); ++i){
-		cout<<"Posicion: "<<i<<lista_Racional[i].to_string()<<endl;
-	}//fin del for
-	cout<<endl<<endl;
+	cout<<"\n\nLista de Racionales"<<endl;
+	if (!lista_Racional.empty()){
+		for (int i = 0; i < lista_Racional.size(); i++){			
+			cout<<"Posicion "<<i<<": "<<lista_Racional[i].To_string()<<endl;
+		}
+	}else{
+		cout<<"El vector esta vacio"<<endl;
+	}
 
 }//Fin del metodo para listar racionales
 
 void Listar_Complejo(){
-	
-	cout<<"Lista de Complejos"<<endl;
-	for (int i = 0; i < lista_Complejo.size(); ++i){
-		cout<<"Posicion: "<<i<<lista_Complejo[i].to_string()<<endl;
-	}//fin del for
-	cout<<endl<<endl;
+
+	cout<<"\n\nLista de Complejos"<<endl;
+	if (!lista_Complejo.empty()){
+		for (int i = 0; i < lista_Complejo.size(); i++){			
+			cout<<"Posicion "<<i<<": "<<lista_Complejo[i].To_string()<<endl;
+		}
+	}else{
+		cout<<"El vector esta vacio"<<endl;
+	}
 
 }//Fin del metodo para listar complejos
 
@@ -221,14 +227,24 @@ int main(){
 						int opcion;
 
 						cout<<"1. Suma Rcionales"<<endl;
-						cout<<"2 .Suma Complejos"<<endl;
+						cout<<"2. Suma Complejos"<<endl;
 						cout<<"Ingrese una opcion: ";
 						cin>>opcion;
 
 						switch(opcion){
 
 							case 1:{
-
+								listar_Racional();
+            					int num, num2;
+            					cout << "Ingrese el numero del primer vector a sumar: ";
+            					cin >> num;
+            					cout << "Ingrese el numero del segundo vector a sumar: ";
+            					cin >> num2;
+            					cout<<lista_Racional[num].To_string()<<" + "<<lista_Racional[num2].To_string()<<"= ";
+                				Vector<Racional> suma = lista_Racional[num] + lista_Racional[num2];
+                				cout << "[" << suma.getX().To_string() << ", "; 
+                				cout << suma.getY().To_string() << ", "; 
+                				cout << suma.getZ().To_string() << "]" << endl<<endl;
 							break;}
 							
 							case 2:{
@@ -238,10 +254,11 @@ int main(){
             					cin >> num;
             					cout << "Ingrese el numero del segundo vector a sumar: ";
             					cin >> num2;
+            					cout<<lista_Complejo[num].To_string()<<"+"<<lista_Complejo[num2].To_string()<<"=";
             					Vector<Complejo> suma = lista_Complejo[num] + lista_Complejo[num2];
-            					cout << "Suma: " << "[" << suma.getX().to_string() << ", "; 
-            					cout << suma.getY().to_string() << ", "; 
-            					cout << suma.getZ().to_string() << "]" << endl; 
+            					cout<< "[" << suma.getX().To_string() << ", "; 
+            					cout<< suma.getY().To_string() << ", "; 
+            					cout<< suma.getZ().To_string() << "]" << endl<<endl; 
 							break;}
 
 							default:{
@@ -252,6 +269,47 @@ int main(){
 					break;}
 
 					case 2:{
+						int opcion;
+
+						cout<<"1. Multiplicacion Racionales"<<endl;
+						cout<<"2. Multiplicacion Complejos"<<endl;
+						cout<<"Ingrese una opcion: ";
+						cin>>opcion;
+
+						switch(opcion){
+
+							case 1:{
+								listar_Racional();
+            					int num, num2;
+            					cout << "Ingrese el numero del primer vector a multiplicar: ";
+            					cin >> num;
+            					cout << "Ingrese el numero del segundo vector a multiplicar: ";
+            					cin >> num2;
+            					cout<<lista_Racional[num].To_string()<<" * "<<lista_Racional[num2].To_string()<<"= ";
+                				Vector<Racional> suma = lista_Racional[num] * lista_Racional[num2];
+                				cout << "[" << suma.getX().To_string() << ", "; 
+                				cout << suma.getY().To_string() << ", "; 
+                				cout << suma.getZ().To_string() << "]" << endl<<endl;
+							break;}
+							
+							case 2:{
+								Listar_Complejo();
+            					int num, num2;
+            					cout << "Ingrese el numero del primer vector a multiplicar: ";
+            					cin >> num;
+            					cout << "Ingrese el numero del segundo vector a multiplicar: ";
+            					cin >> num2;
+            					cout<<lista_Complejo[num].To_string()<<" * "<<lista_Complejo[num2].To_string()<<"=";
+            					Vector<Complejo> suma = lista_Complejo[num] * lista_Complejo[num2];
+            					cout<< "[" << suma.getX().To_string() << ", "; 
+            					cout<< suma.getY().To_string() << ", "; 
+            					cout<< suma.getZ().To_string() << "]" << endl<<endl; 
+							break;}
+
+							default:{
+								cout<<"Opcion no valida"<<endl<<endl;
+							break;}
+						}//fin de las opciones para suma
 					break;}
 
 					default:{

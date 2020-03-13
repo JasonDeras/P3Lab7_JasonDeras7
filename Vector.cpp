@@ -33,8 +33,8 @@ class Vector {
         Vector<cordenada> operator+( Vector<cordenada> );
         Vector<cordenada> operator*( Vector<cordenada> );
         
-        string to_string(){ 
-        	cout<<"[" <<x.to_string() <<", " <<y.to_string() <<", " << z.to_string() << "]";
+        string To_string(){ 
+        	cout<<"[" <<x.To_string() <<", " <<y.To_string() <<", " << z.To_string() << "]";
 
         	return " "; 
         }

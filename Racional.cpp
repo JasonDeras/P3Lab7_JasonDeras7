@@ -8,6 +8,7 @@ Racional::Racional( int numerador, int denominador ){
 }
 
 void Racional::simplificar( int numerador, int denominador ){
+	
     for (int i = 1; i <= numerador; i++){
        if( numerador % i == 0 && denominador % i == 0){
            numerador /= i;
