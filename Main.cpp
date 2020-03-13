@@ -1,4 +1,4 @@
-#include"Vector.h"
+#include"Vector.cpp"
 #include"Racional.h"
 #include"Complejo.h"
 #include <iostream>
@@ -11,6 +11,10 @@ vector<Vector<Racional>> lista_Racional;
 
 //Vector de complejo
 vector <Vector<Complejo>> lista_complejo;
+
+//Variables de control
+Racional r1,r2,r3;
+Complejo c1,c2,c3;
 
 int menu(){
 	
@@ -73,6 +77,16 @@ int operacion(){
 
 }//fin del metodo para operaciones
 
+int  denominador(int deno){
+	
+	while(deno==0){
+		cout<<"El denominador no puede ser cero"<<endl<<endl;
+		cout<<"Ingrese el denominador: ";
+		cin>> deno;
+	}
+
+	return deno;
+}
 void listar_Racional(){
 
 }//Fin del metodo para listar racionales
@@ -90,6 +104,39 @@ int main(){
 		switch(menu()){
 			
 			case 1:{
+
+				int numerador1;
+				int denominador1;
+				
+				int numerador2;
+				int denominador2;
+
+				int numerador3;
+				int denominador3;
+
+				cout<<"Ingrese el primer numerador: ";
+				cin>>numerador1;
+				cout<<"Ingrese el primer denominador: ";
+				cin>>denominador1;
+				denominador(denominador1);
+				r1=Racional(numerador1,denominador1);
+				
+				cout<<"Ingrese el segundo numerador: ";
+				cin>>numerador2;
+				cout<<"Ingrese el segundo denominador: ";
+				cin>>denominador2;
+				denominador(denominador2);
+				r2=Racional(numerador2,denominador2);
+				
+				cout<<"Ingrese el tercer numerador: ";
+				cin>>numerador3;
+				cout<<"Ingrese el tercer denominador: ";
+				cin>>denominador3;
+				denominador(denominador3);
+				r3=Racional(numerador3,denominador3);
+
+				Vector<Racional>v(r1,r2,r3);
+				lista_Racional.push_back(v);
 
 			break;}//Fin del caso 1 del menu principal
 
@@ -114,24 +161,24 @@ int main(){
 
 			case 3:{
 
-					switch(operacion()){
+				switch(operacion()){
 
-						default:{
-							cout<<"Opcion no valida"<<endl<<endl;
-						break;}
+					default:{
+						cout<<"Opcion no valida"<<endl<<endl;
+					break;}
 
-					}//Fin del caso de las operaciones
+				}//Fin del caso de las operaciones
 
 			break;}//Fin del caso 3 del menu principal
 
 			default:{
-				cout<<"Opcion no valida"<<endl<<emdl;
+				cout<<"Opcion no valida"<<endl<<endl;
 			break;}	
 
 		}//Fin de las opciones del menu
 
 		cout<<"Volver al menu [1.-Si/2.-No]: ";
-		cin>>usuairo;
+		cin>>usuario;
 		cout<<endl<<endl;
 	
 	}//fin del while del usuario;

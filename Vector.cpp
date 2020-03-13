@@ -1,5 +1,6 @@
 #include <typeinfo>
 #include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -18,8 +19,15 @@ class Vector{
 
 	public: 
 		
-		Vector();
-		Vector(cordenada,cordenada,cordenada);
+		Vector(){
+
+		}
+		
+		Vector(cordenada x,cordenada y,cordenada z){
+			this->x=x;
+			this->y=y;
+			this->z=z;
+		}
 
 
 		cordenada getX(){
@@ -47,11 +55,13 @@ class Vector{
 		}
 
 		string to_string(){
-			salida="["+x+","+y+","+z+"]";
-			return salida;
+			cout<<"["+x+","+y+","+z+"]";
+			return " ";
 		}
 
-		~Vector();
+		~Vector(){
+
+		}
 };
 
 #endif

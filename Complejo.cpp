@@ -1,5 +1,5 @@
 #include "Complejo.h"
-
+#include <iostream>
 #include <typeinfo>
 
 using namespace std;
@@ -9,36 +9,37 @@ Complejo::Complejo(){
 	b=0;
 }
 
-Complejo::Complejo(int a, int b){
-	this->a=a;
-	this->b=b;
+Complejo::Complejo(int p_a, int p_b){
+	a=p_a;
+	b=p_b;
 }
 
 int Complejo::getA(){
 	return a;
 }
 
-void Complejo::setA(int a){
-	this->a=a;
+void Complejo::setA(int p_a){
+	a=p_a;
 }
 
 int Complejo::getB(){
 	return b;
 }
 
-void Complejo::setB(int b){
-	this->b=b;
+void Complejo::setB(int p_b){
+	b=p_b;
 }
 
 string Complejo::to_string(){
-	salida="";
+
+	
 	
 	if(b<0){
-		salida=""+a+"-"+b"i";
-		return salida;
+		cout<<""<<a<<"+"<<b<<"i";
+		return " ";
 	}else{
-		salida=""+a+"+"+b+"i";
-		return salida;
+		cout<<""<<a<<"-"<<b<<"i";
+		return " ";
 	}
 }
 Complejo::~Complejo(){

@@ -1,5 +1,6 @@
 #include "Racional.h"
 #include <string>
+#include <iostream>
 #include <typeinfo>
 
 using namespace std;
@@ -9,30 +10,30 @@ Racional::Racional(){
 	denominador=1;
 }
 
-Racional::Racional(int numerador, int denominador){
-	this->numerador=numerador;
-	this->denominador=denominador;
+Racional::Racional(int num, int deno){
+	numerador=num;
+	denominador=deno;
 }
 
 int Racional::getNumerador(){
 	return numerador;
 }
 
-void Racional::setNumerador(int numerador){
-	this->numerador=numerador;
+void Racional::setNumerador(int num){
+	numerador=num;
 }
 
 int Racional::getDenominador(){
 	return denominador;
 }
 
-void Racional::setDenominador(int denominador){
-	this->denominador=denominador;
+void Racional::setDenominador(int deno){
+	denominador=deno;
 }
 
 string Racional::to_string(){
-	salida=""numerado+"/"+denominador;
-	return salida;
+	cout<<""<<numerador<<"/"<<denominador;
+	return " ";
 }
 
 Racional::~Racional(){
