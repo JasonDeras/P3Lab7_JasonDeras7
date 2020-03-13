@@ -59,14 +59,21 @@ int  denominador(int deno){
 }
 
 void listar_Racional(){
-	
-	for (int i = 0; i < lista_Racional.size(); ++i){
-		cout<<i<<lista_Racional[i].to_string()<<endl;
-	}//fin del for
 
+	cout<<"Lista de Racionales"<<endl;
+	for (int i = 0; i < lista_Racional.size(); ++i){
+		cout<<"Posicion"<<i<<lista_Racional[i].to_string()<<endl;
+	}//fin del for
+	cout<<endl<<endl;
 }//Fin del metodo para listar racionales
 
 void Listar_Complejo(){
+	
+	cout<<"Lista de Complejos"<<endl;
+	for (int i = 0; i < lista_Complejo.size(); ++i){
+		cout<<"Posicion"<<i<<lista_Complejo[i].to_string()<<endl;
+	}//fin del for
+	cout<<endl<<endl;
 
 }//Fin del metodo para listar complejos
 
@@ -103,6 +110,7 @@ int main(){
 						cin>>numerador1;
 						cout<<"Ingrese el primer denominador: ";
 						cin>>denominador1;
+						cout<<MCD(numerador1,denominador2);
 						denominador(denominador1);
 						r1=Racional(numerador1,denominador1);
 				
@@ -124,7 +132,40 @@ int main(){
 						lista_Racional.push_back(v);
 					break;}//fin de la opcion de racionales
 					
-					case 2:{						
+					case 2:{
+
+						int a1;
+						int b1;
+
+						int a2;
+						int b2;
+
+						int a3;
+						int b3;						
+
+						cout<<"Ingrese el primer real: ";
+						cin>>a1;
+						cout<<"Ingrese el primer imaginario: ";
+						cin>>b1;
+						c1=Complejo(a1,b1);
+
+
+
+						cout<<"Ingrese el segundo real: ";
+						cin>>a2;
+						cout<<"Ingrese el segundo imaginario: ";
+						cin>>b2;
+						c2=Complejo(a2,b2);
+
+
+						cout<<"Ingrese el tercer real: ";
+						cin>>a3;
+						cout<<"Ingrese el tercer imaginario: ";
+						cin>>b3;
+						c3=Complejo(a3,b3);
+
+						Vector<Complejo>c(c1,c2,c3);
+						lista_Complejo.push_back(c);
 
 					break;}//fin de la opcion de complejos
 					
@@ -139,16 +180,16 @@ int main(){
 
 			case 2:{
 
-				int ocpion;
+				int opcion;
 
 				cout<<"1. Listar Racionales"<<endl;
 				cout<<"2. Listar Complejos"<<endl;
-				cout<<"Ingrese una opcion: "<<endl;
+				cout<<"Ingrese una opcion: ";
 				cin>>opcion;
 				
 				switch(opcion){
 					 
-					 case 1;{
+					 case 1:{
 					 	listar_Racional();
 					 break;}
 
@@ -165,14 +206,6 @@ int main(){
 			break;}//Fin de la opciones de listar
 
 			case 3:{
-
-				switch(operacion()){
-
-					default:{
-						cout<<"Opcion no valida"<<endl<<endl;
-					break;}
-
-				}//Fin del caso de las operaciones
 
 			break;}//Fin del caso 3 del menu principal
 

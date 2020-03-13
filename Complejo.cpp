@@ -31,14 +31,11 @@ void Complejo::setB(int p_b){
 }
 
 string Complejo::to_string(){
-
-	
-	
 	if(b<0){
-		cout<<""<<a<<"+"<<b<<"i";
+		cout<<""<<a<<""<<b<<"i";
 		return " ";
 	}else{
-		cout<<""<<a<<"-"<<b<<"i";
+		cout<<""<<a<<"+"<<b<<"i";
 		return " ";
 	}
 }
