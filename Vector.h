@@ -1,28 +1,37 @@
 #include <typeinfo>
+#include <string>
 
 using namespace std;
 
 #ifndef VECTOR_H
 #define VECTOR_H
+template  <class t>
 
 class Vector{
 	
 	private: 
+		
+		t x;
+		t y;
+		t z;
 
-		int numerador;
-		int denominador;
 
 	public: 
-
-		Vector();
-		Vector(int, int );
-
-		int getNumerador();
-		void setNumerador(int);
-
-		int getDenominador();
-		void setDenominador(int);
 		
+		Vector();
+		Vector(t,t,t);
+
+		t getX();
+		void setX(t);
+
+		t getY();
+		void setY(t);
+
+		t getZ();
+		void setZ(t);
+
+		string to_string();
+
 		~Vector();
 };
 

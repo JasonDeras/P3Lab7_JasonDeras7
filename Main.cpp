@@ -19,13 +19,13 @@ int menu(){
 	cout<<"3. Operar vectores"<<endl;
 	cout<<"Ingrese una opcion: ";
 	cin>>opcion;
-	cout<<endl<<enl;
+	cout<<endl<<endl;
 
 	return opcion;
 
 }//Fin del metodo menu 
 
-int main(){
+/*int main(){
 
 	int usuario=1;
 
@@ -57,4 +57,4 @@ int main(){
 	
 	return 0;
 
-}//Fin del main 
+}//Fin del main */
