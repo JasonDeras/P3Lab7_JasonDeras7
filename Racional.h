@@ -45,6 +45,15 @@ class Racional{
 			return Racional(numerador/divisor,denominador/divisor);
 		}
 
+		Racional operator*(Racional ope){
+
+			numerador=(this->numerador*ope.getNumerador());
+			denominador=(this->denominador*ope.getDenominador());
+			
+
+			return Racional(numerador, denominador);
+		}
+
 		string to_string();
 
 		~Racional();
