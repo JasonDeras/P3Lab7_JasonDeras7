@@ -1,4 +1,5 @@
 #include <typeinfo>
+#include <string>
 
 using namespace std;
 
@@ -23,6 +24,8 @@ class Racional{
 		int getDenominador();
 		void setDenominador(int);
 		
+		string to_string();
+
 		~Racional();
 };
 

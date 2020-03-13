@@ -1,4 +1,5 @@
 #include <typeinfo>
+#include <string>
 
 using namespace std;
 
@@ -22,6 +23,8 @@ class Complejo{
 
 		int getB();
 		void setB(int);
+		
+		string to_string();
 		
 		~Complejo();
 };

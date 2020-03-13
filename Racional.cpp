@@ -1,5 +1,5 @@
 #include "Racional.h"
-
+#include <string>
 #include <typeinfo>
 
 using namespace std;
@@ -28,6 +28,11 @@ int Racional::getDenominador(){
 
 void Racional::setDenominador(int denominador){
 	this->denominador=denominador;
+}
+
+string Racional::to_string(){
+	salida=""numerado+"/"+denominador;
+	return salida;
 }
 
 Racional::~Racional(){

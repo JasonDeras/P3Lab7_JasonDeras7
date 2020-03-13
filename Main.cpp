@@ -6,8 +6,11 @@
 
 using namespace std;
 
-//Vector de numeros
-vector<Racional> *lista_Racional;
+//Vector de Racionales
+vector<Vector<Racional>> lista_Racional;
+
+//Vector de complejo
+vector <Vector<Complejo>> lista_complejo;
 
 int menu(){
 	
@@ -23,9 +26,62 @@ int menu(){
 
 	return opcion;
 
-}//Fin del metodo menu 
+}//fin del metodo menu 
 
-/*int main(){
+int agregar(){
+
+	int opcion;
+
+	cout<<"Menu creacion"<<endl;
+	cout<<"1. Agregar Racional"<<endl;
+	cout<<"2. Agregar Complejo"<<endl;
+	cout<<"Ingrese una opcion: ";
+	cin>>opcion;
+	cout<<endl<<endl;
+
+	return opcion;
+
+}//fin del metodo para agregar
+
+int listar(){
+
+	int opcion;
+
+	cout<<"Menu creacion"<<endl;
+	cout<<"1. Listar Racionales"<<endl;
+	cout<<"2. Listar Complejo"<<endl;
+	cout<<"Ingrese una opcion: ";
+	cin>>opcion;
+	cout<<endl<<endl;
+
+	return opcion;
+
+}//fin del metodo para listar
+
+int operacion(){
+
+	int opcion;
+
+	cout<<"Menu operacion"<<endl;
+	cout<<"1. Suma "<<endl;
+	cout<<"2. Multiplicacion"<<endl;
+	cout<<"Ingrese una opcion: ";
+	cin>>opcion;
+	cout<<endl<<endl;
+
+	return opcion;
+
+}//fin del metodo para operaciones
+
+void listar_Racional(){
+
+}//Fin del metodo para listar racionales
+
+void Listar_Complejo(){
+
+}//Fin del metodo para listar complejos
+
+int main(){
 
 	int usuario=1;
 
@@ -34,14 +90,39 @@ int menu(){
 		switch(menu()){
 			
 			case 1:{
-			break;}
+
+			break;}//Fin del caso 1 del menu principal
 
 
 			case 2:{
-			break;}
+
+				switch(agregar()){
+
+					case 1:{
+					break;}
+
+					case 2:{
+					break;}
+
+					default:{
+						cout<<"Opcion no valida"<<endl<<endl;
+					break;}
+
+				}//Fin de la opciones de listar
+
+			break;}//Fin del caso 2 del menu principal
 
 			case 3:{
-			break;}
+
+					switch(operacion()){
+
+						default:{
+							cout<<"Opcion no valida"<<endl<<endl;
+						break;}
+
+					}//Fin del caso de las operaciones
+
+			break;}//Fin del caso 3 del menu principal
 
 			default:{
 				cout<<"Opcion no valida"<<endl<<emdl;
@@ -57,4 +138,4 @@ int menu(){
 	
 	return 0;
 
-}//Fin del main */
+}//Fin del main
