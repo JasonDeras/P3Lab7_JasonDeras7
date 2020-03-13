@@ -62,16 +62,17 @@ void listar_Racional(){
 
 	cout<<"Lista de Racionales"<<endl;
 	for (int i = 0; i < lista_Racional.size(); ++i){
-		cout<<"Posicion"<<i<<lista_Racional[i].to_string()<<endl;
+		cout<<"Posicion: "<<i<<lista_Racional[i].to_string()<<endl;
 	}//fin del for
 	cout<<endl<<endl;
+
 }//Fin del metodo para listar racionales
 
 void Listar_Complejo(){
 	
 	cout<<"Lista de Complejos"<<endl;
 	for (int i = 0; i < lista_Complejo.size(); ++i){
-		cout<<"Posicion"<<i<<lista_Complejo[i].to_string()<<endl;
+		cout<<"Posicion: "<<i<<lista_Complejo[i].to_string()<<endl;
 	}//fin del for
 	cout<<endl<<endl;
 
@@ -110,7 +111,6 @@ int main(){
 						cin>>numerador1;
 						cout<<"Ingrese el primer denominador: ";
 						cin>>denominador1;
-						cout<<MCD(numerador1,denominador2);
 						denominador(denominador1);
 						r1=Racional(numerador1,denominador1);
 				
@@ -130,6 +130,7 @@ int main(){
 
 						Vector<Racional>v(r1,r2,r3);
 						lista_Racional.push_back(v);
+
 					break;}//fin de la opcion de racionales
 					
 					case 2:{
