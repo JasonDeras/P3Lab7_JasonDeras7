@@ -1,89 +1,59 @@
-#include <typeinfo>
+#pragma once
 #include <string>
-#include "Racional.h"
-
 #include <iostream>
 
 using namespace std;
 
-#ifndef VECTOR_H
-#define VECTOR_H
-template  <class cordenada>
+template< class cordenada >
 
-class Vector{
-	
-	private: 
-		
-		cordenada x;
-		cordenada y;
-		cordenada z;
+class Vector {
+    private:
+        cordenada x;
+        cordenada y;
+        cordenada z;
+    public:
+        Vector( cordenada x, cordenada y, cordenada z ){
+            this->x = x;
+            this->y = y;
+            this->z = z;
+        }
 
+        cordenada getX(){ 
+        	return x; 
+        }
 
-	public: 
-		
-		Vector(){
+        cordenada getY(){ 
+        	return y; 
+        }
+        
+        cordenada getZ(){ 
+        	return z; 
+        }
 
-		}
-		
-		Vector(cordenada x,cordenada y,cordenada z){
-			this->x=x;
-			this->y=y;
-			this->z=z;
-		}
+        Vector<cordenada> operator+( Vector<cordenada> );
+        Vector<cordenada> operator*( Vector<cordenada> );
+        
+        string to_string(){ 
+        	cout<<"[" <<x.to_string() <<", " <<y.to_string() <<", " << z.to_string() << "]";
 
-
-		cordenada getX(){
-			return x;
-		}
-
-		void setX(){
-			this->x=x;
-		}
-
-		cordenada getY(){
-			return y;
-		}
-
-		void setY(){
-			this->y=y;
-		}
-
-		cordenada getZ(){
-			return z;
-		}
-
-		void setZ(){
-			this->z=z;
-		}
-
-		string to_string(){
-			cout<<"["<<x.to_string()<<","<<y.to_string()<<","<<z.to_string()<<"]";
-			return " ";
-		}
-
-		Vector operator+(Vector ope){
-
-			Vector x=this.x+ope.getX();
-			Vector y=this.y+ope.getY();
-			Vector z=this.z+ope.getZ();
-
-			return Vector(x,y,z);
-			
-		}
-
-		Vector operator*(Vector ope){
-
-			Vector x=this.x+ope.getX();
-			Vector y=this.y+ope.getY();
-			Vector z=this.z+ope.getZ();
-
-			return Vector(x,y,z);
-			
-		}
-
-		~Vector(){
-
-		}
+        	return " "; 
+        }
 };
 
-#endif
+template< class cordenada >
+
+Vector<cordenada> Vector<cordenada>::operator+( Vector<cordenada> v2 ){
+    cordenada _x = (*this).getX() + v2.getX();
+    cordenada _y = (*this).getY() + v2.getY();
+    cordenada _z = (*this).getZ() + v2.getZ();
+    return Vector( _x, _y, _z );
+}
+
+template< class cordenada >
+
+Vector<cordenada> Vector<cordenada>::operator*( Vector<cordenada> v2 ){
+    cordenada _x = (*this).getX() * v2.getX();
+    cordenada _y = (*this).getY() * v2.getY();
+    cordenada _z = (*this).getZ() * v2.getZ();
+    return Vector( _x, _y, _z );
+}

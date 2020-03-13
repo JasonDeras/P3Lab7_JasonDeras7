@@ -1,41 +1,31 @@
 #include "Racional.h"
-#include <string>
-#include <iostream>
-#include <typeinfo>
-
-using namespace std;
 
 Racional::Racional(){
-	numerador=0;
-	denominador=1;
 }
 
-Racional::Racional(int num, int deno){
-	numerador=num;
-	denominador=deno;
+Racional::Racional( int numerador, int denominador ){
+    simplificar( numerador, denominador );
 }
 
-int Racional::getNumerador(){
-	return numerador;
+void Racional::simplificar( int numerador, int denominador ){
+    for (int i = 1; i <= numerador; i++){
+       if( numerador % i == 0 && denominador % i == 0){
+           numerador /= i;
+           denominador /= i;
+       }
+    }
+    (*this).numerador = numerador;
+    (*this).denominador = denominador;
 }
 
-void Racional::setNumerador(int num){
-	numerador=num;
+Racional Racional::operator+( Racional r2 ){
+    int denominador = (*this).getDenominador() * r2.getDenominador();
+    int numerador = (*this).getNumerador() * r2.getDenominador() + (*this).getDenominador() * r2.getNumerador();
+    return Racional( numerador, denominador );
 }
 
-int Racional::getDenominador(){
-	return denominador;
-}
-
-void Racional::setDenominador(int deno){
-	denominador=deno;
-}
-
-string Racional::to_string(){
-	cout<<""<<numerador<<"/"<<denominador;
-	return " ";
-}
-
-Racional::~Racional(){
-	
+Racional Racional::operator*( Racional r2 ){
+    int denominador = (*this).getDenominador() * r2.getDenominador();
+    int numerador = (*this).getNumerador() * r2.getNumerador();
+    return Racional( numerador, denominador );
 }

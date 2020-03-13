@@ -208,6 +208,58 @@ int main(){
 
 			case 3:{
 
+				int opcion;
+				cout<<"1. Suma"<<endl;
+				cout<<"2. Multiplicacion"<<endl;
+				cout<<"Ingrese una opcion: ";
+				cin>>opcion;
+
+				switch(opcion){
+
+					case 1:{
+						
+						int opcion;
+
+						cout<<"1. Suma Rcionales"<<endl;
+						cout<<"2 .Suma Complejos"<<endl;
+						cout<<"Ingrese una opcion: ";
+						cin>>opcion;
+
+						switch(opcion){
+
+							case 1:{
+
+							break;}
+							
+							case 2:{
+								Listar_Complejo();
+            					int num, num2;
+            					cout << "Ingrese el numero del primer vector a sumar: ";
+            					cin >> num;
+            					cout << "Ingrese el numero del segundo vector a sumar: ";
+            					cin >> num2;
+            					Vector<Complejo> suma = lista_Complejo[num] + lista_Complejo[num2];
+            					cout << "Suma: " << "[" << suma.getX().to_string() << ", "; 
+            					cout << suma.getY().to_string() << ", "; 
+            					cout << suma.getZ().to_string() << "]" << endl; 
+							break;}
+
+							default:{
+								cout<<"Opcion no valida"<<endl<<endl;
+							break;}
+						}//fin de las opciones para suma
+
+					break;}
+
+					case 2:{
+					break;}
+
+					default:{
+						cout<<"Opcion no valida"<<endl<<endl;
+					break;}
+				
+				}//Fin de las opciones de operaciones
+
 			break;}//Fin del caso 3 del menu principal
 
 			default:{
