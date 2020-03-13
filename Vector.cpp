@@ -55,7 +55,7 @@ class Vector{
 		}
 
 		string to_string(){
-			cout<<"["+x+","+y+","+z+"]";
+			cout<<"["<<x.to_string()<<","<<y.to_string()<<","<<z.to_string()<<"]";
 			return " ";
 		}
 
