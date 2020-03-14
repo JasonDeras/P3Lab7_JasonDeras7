@@ -234,12 +234,23 @@ int main(){
 						switch(opcion){
 
 							case 1:{
+
 								listar_Racional();
             					int num, num2;
             					cout << "Ingrese el numero del primer vector a sumar: ";
             					cin >> num;
+            					while(num <0 &&num>lista_Racional.size()){
+            						cout<<"El valor esta fuera del vector"<<endl;
+            						cout << "Ingrese el numero del primer vector a sumar: ";
+            						cin >> num;
+            					}
             					cout << "Ingrese el numero del segundo vector a sumar: ";
             					cin >> num2;
+            					while(num2 <0 &&num2>lista_Racional.size()){
+            						cout<<"El valore sta fuera del vector"<<endl;
+            						cout << "Ingrese el numero del primer vector as sumar: ";
+            						cin >> num2;
+            					}
             					cout<<lista_Racional[num].To_string()<<" + "<<lista_Racional[num2].To_string()<<"= ";
                 				Vector<Racional> suma = lista_Racional[num] + lista_Racional[num2];
                 				cout << "[" << suma.getX().To_string() << ", "; 
@@ -252,8 +263,20 @@ int main(){
             					int num, num2;
             					cout << "Ingrese el numero del primer vector a sumar: ";
             					cin >> num;
+            					while(num <0 &&num>lista_Complejo.size()){
+            						cout<<"El valor esta fuera del vector"<<endl;
+            						cout << "Ingrese el numero del primer vector a sumar: ";
+            						cin >> num;
+            					}
+
             					cout << "Ingrese el numero del segundo vector a sumar: ";
             					cin >> num2;
+            					while(num2 <0 &&num2>lista_Complejo.size()){
+            						cout<<"El valor esta fuera del vector"<<endl;
+            						cout << "Ingrese el numero del segundo vector a sumas: ";
+            						cin >> num2;
+            					}
+
             					cout<<lista_Complejo[num].To_string()<<"+"<<lista_Complejo[num2].To_string()<<"=";
             					Vector<Complejo> suma = lista_Complejo[num] + lista_Complejo[num2];
             					cout<< "[" << suma.getX().To_string() << ", "; 
@@ -283,13 +306,27 @@ int main(){
             					int num, num2;
             					cout << "Ingrese el numero del primer vector a multiplicar: ";
             					cin >> num;
+            					while(num <0 &&num>lista_Racional.size()){
+            						cout<<"El valor esta fuera del vector"<<endl;
+            						cout << "Ingrese el numero del primer vector a multiplicar: ";
+            						cin >> num;
+            					}
+
             					cout << "Ingrese el numero del segundo vector a multiplicar: ";
             					cin >> num2;
+            					
+            					while(num2 <0 &&num2>lista_Racional.size()){
+            						cout<<"El valor esta fuera del vector"<<endl;
+            						cout << "Ingrese el numero del segundo vector a multiplicar: ";
+            						cin >> num2;
+            					}
+
             					cout<<lista_Racional[num].To_string()<<" * "<<lista_Racional[num2].To_string()<<"= ";
                 				Vector<Racional> suma = lista_Racional[num] * lista_Racional[num2];
                 				cout << "[" << suma.getX().To_string() << ", "; 
                 				cout << suma.getY().To_string() << ", "; 
                 				cout << suma.getZ().To_string() << "]" << endl<<endl;
+
 							break;}
 							
 							case 2:{
@@ -297,8 +334,20 @@ int main(){
             					int num, num2;
             					cout << "Ingrese el numero del primer vector a multiplicar: ";
             					cin >> num;
+            					while(num <0 &&num>lista_Complejo.size()){
+            						cout<<"El valor esta fuera del vector"<<endl;
+            						cout << "Ingrese el numero del primer vector a multiplicar: ";
+            						cin >> num;
+            					}
+
             					cout << "Ingrese el numero del segundo vector a multiplicar: ";
             					cin >> num2;
+            					while(num2 <0 &&num2>lista_Complejo.size()){
+            						cout<<"El valor esta fuera del vector"<<endl;
+            						cout << "Ingrese el numero del segundo vector a multiplicar: ";
+            						cin >> num2;
+            					}
+
             					cout<<lista_Complejo[num].To_string()<<" * "<<lista_Complejo[num2].To_string()<<"=";
             					Vector<Complejo> suma = lista_Complejo[num] * lista_Complejo[num2];
             					cout<< "[" << suma.getX().To_string() << ", "; 
